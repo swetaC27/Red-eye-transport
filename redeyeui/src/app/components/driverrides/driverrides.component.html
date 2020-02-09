@@ -1,0 +1,66 @@
+<div class="cont">
+  <br />
+  <mat-toolbar>
+    Rides for
+  </mat-toolbar>
+  <mat-card>
+    <mat-divider></mat-divider>
+    <br>
+    Schedules
+    <mat-select class="selectClass" placeholder ="Enter schedule" >
+        <mat-option *ngFor="let time of times" [value]="time" (click)=filterSchedules(time) >{{time}}</mat-option>
+    </mat-select>
+
+    <mat-select class="selectClass" placeholder = "Enter criteria">
+        <mat-option *ngFor="let type of search" [value]="type" (click)=filterSearch(type) >{{type}}</mat-option>
+    </mat-select>
+    <table mat-table [dataSource]="driverRides">
+      <ng-container matColumnDef="NUID">
+        <th mat-header-cell *matHeaderCellDef>NUID</th>
+        <td mat-cell *matCellDef="let element">{{element.NUID}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="source">
+        <th mat-header-cell *matHeaderCellDef>Source</th>
+        <td mat-cell *matCellDef="let element">{{element.source}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="destination">
+        <th mat-header-cell *matHeaderCellDef>Destination</th>
+        <td mat-cell *matCellDef="let element">{{element.destination}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">{{element.rideStatus}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-column-align">Action</th>
+        <td mat-cell *matCellDef="let element" class="mat-header-column-align">
+
+          <button mat-button color="warn" (click)="updateStatus(element.id, element.rideStatus, 'NoShow')">No Show</button>
+          <button mat-button color="primary" (click)="updateStatus(element.id, element.rideStatus, 'OnGoing')">Start</button>
+          <button mat-button color="green" (click)="updateStatus(element.id, element.rideStatus, 'Completed')">Complete</button>
+
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </mat-card>
+</div>

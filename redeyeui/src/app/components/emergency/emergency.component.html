@@ -1,0 +1,8 @@
+<mat-card *ngFor="let emergency of emergencyContacts">
+    <mat-card-title>{{emergency.departmentName}}</mat-card-title>
+    <img mat-card-image fxLayoutAlign="center" src="../../../assets/{{emergency.logo}}">
+    <mat-card-content>
+        <i class="material-icons">phone</i> <a href="tel:{{emergency.contactNumber}}">{{emergency.contactNumber}}</a><br>
+        <i class="material-icons">email</i><a href="mailto:{{emergency.emailId}}">{{emergency.emailId}}</a>
+    </mat-card-content>
+</mat-card>

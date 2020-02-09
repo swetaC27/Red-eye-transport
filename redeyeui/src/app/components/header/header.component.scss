@@ -1,0 +1,38 @@
+.navbar{
+  min-height: 3.1em;
+  padding:0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  //position: fixed;
+  top: 0;
+  width: 100%;
+  li {
+    float: right;
+  }
+  /*li:last-child {
+    float: right;
+  }*/
+}
+
+
+li a {
+  display: block;
+  color: white !important;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #f22008;
+}

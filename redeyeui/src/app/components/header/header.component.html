@@ -1,0 +1,26 @@
+<!-- header -->
+<nav class="navbar">
+  <div>
+  </div>
+  <ul>
+    <!--<li *ngIf="userName == ''"><a routerLink="/login" routerLinkActive="active">Login</a></li>-->
+    <li *ngIf="udataRes.firstName != '' "><a (click)="logout()" routerLinkActive="active">Logout</a></li>
+    <li *ngIf="udataRes.firstName != '' "><a routerLinkActive="active" class="userName">Welcome : {{udataRes.firstName}}</a></li>
+    <li *ngIf="udataRes.firstName != '' "><a routerLink="/emergency" routerLinkActive="active">Emergency</a></li>
+   <!-- <li *ngIf="udataRes.firstName != '' "><a routerLink="/notifications" routerLinkActive="active">Notifications</a></li>
+-->
+    <!-- Student menu -->
+    <li *ngIf="udataRes.role == 'Student'"><a routerLink="/rides" routerLinkActive="active">My Rides</a></li>
+    <li *ngIf="udataRes.role == 'Student'"><a routerLink="/passengerdetails/5bff27e2d74f26424e026e93" routerLinkActive="active">Book a ride</a></li>
+
+    <!-- Driver menu -->
+    <!-- <li *ngIf="udataRes.role == 'Driver'"><a routerLink="/shift-details" routerLinkActive="active">Shift details</a></li> -->
+    <li *ngIf="udataRes.role == 'Driver'"><a routerLink="/driverDetails/rides" routerLinkActive="active">Rides</a></li>
+    <li *ngIf="udataRes.role == 'Driver'"><a routerLink="/driverDetails/{{this.udataRes.nuid}}" routerLinkActive="active">Work shifts</a></li>
+
+    <!-- Admin menu -->
+   <!-- <li *ngIf="udataRes.role == 'Admin'"><a routerLink="/shift-details" routerLinkActive="active">Shift details</a></li> -->
+    <li *ngIf="udataRes.role == 'Admin'"><a routerLink="/schedule" routerLinkActive="active">Schedule</a></li>
+   <!-- <li *ngIf="udataRes.role == 'Admin'"><a routerLink="/driver-details" routerLinkActive="active">Driver Details</a></li> -->
+  </ul>
+</nav>

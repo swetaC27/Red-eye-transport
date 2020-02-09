@@ -1,0 +1,63 @@
+<div class="driverLogin">
+  <!-- <section class="mat-typography">
+    <h3>Driver Details Screen</h3>
+  </section> -->
+  <mat-toolbar class="buttonColor">Driver Details</mat-toolbar>
+  <mat-divider></mat-divider>
+<!--
+  <div>
+    <label>NUID:</label>&nbsp;&nbsp;
+    <label>{{driver.NUID}}</label>
+    <br>
+    <label>First Name:</label>&nbsp;&nbsp;
+    <label>{{driver.firstName}}</label>
+    <br>
+    <label>Last Name:</label>&nbsp;&nbsp;
+    <label>{{driver.lastName}}</label>
+
+
+  </div> -->
+  <mat-card>
+    <!-- <form name="DriverDetails"> -->
+      <mat-card-content>
+          <mat-label>NUID: </mat-label>
+          <mat-label>{{driver.NUID}}</mat-label>
+          <br>
+          <br>
+          <mat-label>First Name: </mat-label>
+          <mat-label>{{driver.firstName}}</mat-label>
+          <br>
+          <br>
+          <mat-label>Last Name: </mat-label>
+          <mat-label>{{driver.lastName}}</mat-label>
+          <br>
+          <br>
+          <mat-label>Shift Time: </mat-label>
+          <mat-label>{{driver.shiftTime}}</mat-label>
+          <br>
+          <br>
+          <mat-label>Days Working: </mat-label>
+          <ul id="daysOfWeek" *ngFor="let days of driver.daysWorking; ">
+              <li>
+                <input class="mat-checkout-layout" type="checkbox" [(ngModel)]="days.checked" ><label>{{days.day}}</label>
+              </li>
+          </ul>
+
+      <br>
+      <button mat-raised-button class="display-button">Back</button>
+      <div *ngIf = "showAdd" class="display-button">
+          <button type="submit" (click)="addDriverDetails(driver.NUID, driver.shiftTime, driver.daysWorking)" mat-raised-button color="primary" class="buttonColor">Add</button>
+      </div>
+
+      <div *ngIf = "showUpdate" class="display-button">
+          <button type="submit" (click)="updateDriverDetails(driver.NUID, driver.daysWorking)" mat-raised-button color="primary" class="buttonColor">Update</button>
+      </div>
+      <!-- <button type="submit" (click)="openSnack()" mat-raised-button color="primary" class="buttonColor">open snack</button> -->
+
+
+    <!-- </form> -->
+  </mat-card-content>
+
+  </mat-card>
+
+</div>

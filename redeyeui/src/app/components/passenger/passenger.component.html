@@ -1,0 +1,123 @@
+<div class="bookform" [hidden]="!showForm">
+        <br />
+        <mat-toolbar>
+          Book a RedEye
+        </mat-toolbar>
+        <mat-divider></mat-divider>
+        <mat-card>
+            <mat-label>NUID: </mat-label>
+            <mat-label>{{nuActive.NUID}}</mat-label>
+            <br>
+            <br>
+            <mat-label>First Name: </mat-label>
+            <mat-label>{{nuActive.firstName}}</mat-label>
+            <br>
+            <br>
+            <mat-label>Last Name: </mat-label>
+            <mat-label>{{nuActive.lastName}}</mat-label>
+            <br>
+            <br>
+            <mat-label>Email ID: </mat-label>
+            <mat-label>{{nuActive.emailID}}</mat-label>
+            <br>
+            <br>
+            <mat-label>Phone Number: </mat-label>
+            <mat-label>{{nuActive.phoneNumber}}</mat-label>
+            <br>
+            <br>
+            <mat-form-field>
+                <input matInput value="{{nuActive.source}}" type="text" class="form-control" id="source" placeholder="Enter Source" />
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput [(ngModel)]="destination" type="text" class="form-control" id="destination" placeholder="Enter Desination" />
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-select class="selectClass" placeholder ="Enter number of people"  [(ngModel)]="number">
+                <mat-option *ngFor="let number of nopeople" [(value)]="number" >{{number}}</mat-option>
+            </mat-select>
+            <br>
+            <br>
+            <mat-select class="selectClass"  placeholder ="Enter time slot" [(ngModel)]="timetype" >
+                <mat-option *ngFor="let time_type of times" [(value)]="time_type" >{{time_type}}</mat-option>
+            </mat-select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <mat-select class="selectClass"  placeholder ="Enter zone type" [(ngModel)]="zone_type" >
+                <mat-option *ngFor="let zone_type of zones" [(value)]="zone_type" >{{zone_type}}</mat-option>
+            </mat-select>
+            <br>
+            <br>
+
+            <mat-label>
+                <input matInput type="text" value="{{bookDate | date: 'dd/MM/yyyy'}}" readonly>
+            </mat-label>
+
+            <mat-divider></mat-divider>
+
+
+            <button mat-button type="submit" color="primary" (click)="bookRider(nuActive.NUID,nuActive.source,destination,number,time_type,zone_type,bookDate)" >Confirm Booking</button>
+
+
+
+
+        </mat-card>
+       </div>
+
+
+
+
+ <div [hidden]="showForm">
+ <mat-card>
+    <div class="boxes">
+      <mat-form-field>
+         <input matInput value="{{nuActive.source}}" type="text" class="form-control" id="source" placeholder="Enter Source" />
+      </mat-form-field>
+
+     <mat-form-field>
+         <input matInput [(ngModel)]="destination" type="text" class="form-control" id="destination" placeholder="Enter Desination" />
+     </mat-form-field>
+    </div>
+    <div class="boxes">
+        <mat-select class="selectClass" placeholder ="Enter number of people"  [(ngModel)]="nopeople">
+         <mat-option *ngFor="let number of people" [(value)]="number" >{{number}}</mat-option>
+     </mat-select>
+     <mat-select class="selectClass"  placeholder ="Enter time slot" [(ngModel)]="timetype" >
+         <mat-option *ngFor="let time_type of times" [(value)]="time_type" >{{time_type}}</mat-option>
+     </mat-select>
+    </div>
+    <div class="boxes">
+        <mat-label>
+          <input matInput type="text" value="{{bookDate | date: 'dd/MM/yyyy'}}" readonly>
+        </mat-label>
+    </div>
+
+     <mat-divider></mat-divider>
+     <button mat-raised-button type="submit" color="primary" (click)="updateCancelled(id)" >Cancel Booking</button>
+ </mat-card>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

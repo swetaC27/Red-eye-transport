@@ -1,0 +1,61 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { margin:0px auto; height: 100%;
+background: -moz-linear-gradient(45deg, rgba(255,23,69,1) 0%, rgba(255,23,69,1) 97%, rgba(204,51,0,1) 100%) important; /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,23,69,1)), color-stop(97%, rgba(255,23,69,1)), color-stop(100%, rgba(204,51,0,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, rgba(255,23,69,1) 0%, rgba(255,23,69,1) 97%, rgba(204,51,0,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, rgba(255,23,69,1) 0%, rgba(255,23,69,1) 97%, rgba(204,51,0,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(255,23,69,1) 0%, rgba(255,23,69,1) 97%, rgba(204,51,0,1) 100%); /* ie10+ */
+background: linear-gradient(45deg, rgba(255,23,69,1) 0%, rgba(255,23,69,1) 97%, rgba(204,51,0,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC3300', endColorstr='#FF1745',GradientType=1 ); /* ie6-9 */
+  background-position: left;
+}
+/* You can add global styles to this file, and also import other style files */
+ .form-btn {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #f22000;
+    outline: none;
+    border: 0px;
+    cursor: pointer;
+  }
+   .form-btn-hollow {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: #f22000;
+    line-height: 1.2;
+    text-transform: uppercase;
+    background-color:transparent;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border:1px solid #f22000;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+   .form-btn-hollow:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+  }

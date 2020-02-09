@@ -1,0 +1,63 @@
+<!-- <button (click)="submitted=true && rideHistory(nuActive.NUID)" class="login">RideHistory</button>
+-->
+<!-- <ul>
+  <li *ngFor="let ride of ridesData">
+      Department Source : {{ride.source}}<br>
+      Department Destination : {{ride.destination}}<br>
+      Department No of person : {{ride.numberOfPerson}}<br>
+      Department status : {{ride.rideStatus}}
+  </li> -->
+<div class="ridesTbl">
+  <br />
+  <mat-toolbar>
+    Rides Details
+  </mat-toolbar>
+  <mat-card>
+    <mat-divider></mat-divider>
+    <br>
+    Ride Details
+    <mat-select class="selectClass" placeholder = "Enter criteria">
+      <mat-option *ngFor="let type of search" [value]="type" (click)=filterSearch(type) >{{type}}</mat-option>
+  </mat-select>
+
+    <table mat-table [dataSource]="ridesData">
+      <ng-container matColumnDef="NUID">
+        <th mat-header-cell *matHeaderCellDef>NUID</th>
+        <td mat-cell *matCellDef="let element">{{element.NUID}}</td>
+      </ng-container>
+
+       <ng-container matColumnDef="source">
+        <th mat-header-cell *matHeaderCellDef>Source</th>
+        <td mat-cell *matCellDef="let element">{{element.source}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="destination">
+        <th mat-header-cell *matHeaderCellDef>Destination</th>
+        <td mat-cell *matCellDef="let element">{{element.destination}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="pax">
+        <th mat-header-cell *matHeaderCellDef>Number Of passengers</th>
+        <td mat-cell *matCellDef="let element">{{element.numberOfPerson}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="slots">
+        <th mat-header-cell *matHeaderCellDef>slots</th>
+        <td mat-cell *matCellDef="let element">{{element.slot}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">{{element.rideStatus}}</td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </mat-card>
+</div>
+<!-- </ul> -->

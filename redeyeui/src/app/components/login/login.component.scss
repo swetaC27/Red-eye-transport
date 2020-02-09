@@ -1,0 +1,28 @@
+html, body { margin:0px auto; height: 100%;
+  background: url(../../../assets/redeye-img-left.jpg) no-repeat left center fixed !important;
+  background-position: left !important;
+}
+.formcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formbody{
+  display: flex;
+  position: absolute;
+  width: 290px;
+  min-height: 200px;
+  right: 10%;
+  background-color: white;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  top: 20%;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+div > span {
+  font-size: 0.75rem;
+  color: firebrick;
+}

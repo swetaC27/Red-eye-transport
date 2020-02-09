@@ -1,0 +1,49 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.row {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.mat-card-title {
+  text-align: center;
+}
+
+.basic-container {
+  padding: 40px;
+}
+
+table {
+	width: 90%;
+	border-collapse: collapse;
+  margin:50px auto;
+  margin-top:0em;
+  }
+
+.td.mat-cell, th.mat-header-cell {
+    width: 12.5em;
+    font-size: 1.5em !important;
+}
+
+.mat-cell[_ngcontent-c1], .mat-footer-cell[_ngcontent-c1] {
+  width: 12.5em;
+  font-size: 1.5em !important;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+	background: #eee;
+	}
+
+th {
+	background: #F22000;
+	color: white;
+	font-weight: bold;
+	}
+
+td, th {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
+	font-size: 18px;
+	}
+

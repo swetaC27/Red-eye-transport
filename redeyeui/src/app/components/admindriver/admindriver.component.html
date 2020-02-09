@@ -1,0 +1,50 @@
+<head>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<div class="row">
+  <div id="admin" class="col s12">
+    <div class="card material-table mat-app-background basic-container">
+      <mat-card>
+      <mat-card-title> Driver Details</mat-card-title>
+      <table mat-table [dataSource]="dataSource" id="datatable">
+        <ng-container matColumnDef="NUID">
+          <th mat-header-cell *matHeaderCellDef> NUID </th>
+          <td mat-cell *matCellDef="let element"> {{element.NUID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="middleName">
+          <th mat-header-cell *matHeaderCellDef> Middle Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef = "action">
+          <th mat-header-cell *matHeaderCellDef class="mat-header-column-align">Action</th>
+          <td mat-cell *matCellDef="let element" class="mat-header-column-align">
+          <button mat-button color="warn" (click)="updateDriverDetails(element.NUID, element.status)">Update Status</button>
+          </td>
+        </ng-container> -->
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+      </mat-card>
+    </div>
+</div>
+</div>
